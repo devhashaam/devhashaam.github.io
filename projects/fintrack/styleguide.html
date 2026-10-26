@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinTrack Design System</title>
+  <meta name="description" content="Colour, typography, spacing and component tokens behind the FinTrack dashboard.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      const t = localStorage.getItem('fintrack-theme');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <main class="sg">
+    <header>
+      <p><a href="index.html">← Back to dashboard</a></p>
+      <h1>FinTrack design system</h1>
+      <p>Every colour, size and spacing value in the dashboard comes from these tokens (CSS custom properties). Changing a token updates the whole UI, and dark mode is just a second set of token values.</p>
+    </header>
+
+    <section>
+      <h2>Colour</h2>
+      <div class="swatches">
+        <div class="swatch"><div style="background:var(--primary)"></div><p>Primary<br><code>--primary</code></p></div>
+        <div class="swatch"><div style="background:var(--primary-soft)"></div><p>Primary soft<br><code>--primary-soft</code></p></div>
+        <div class="swatch"><div style="background:var(--text)"></div><p>Text<br><code>--text</code></p></div>
+        <div class="swatch"><div style="background:var(--muted)"></div><p>Muted<br><code>--muted</code></p></div>
+        <div class="swatch"><div style="background:var(--bg)"></div><p>Background<br><code>--bg</code></p></div>
+        <div class="swatch"><div style="background:var(--success)"></div><p>Success<br><code>--success</code></p></div>
+        <div class="swatch"><div style="background:var(--warning)"></div><p>Warning<br><code>--warning</code></p></div>
+        <div class="swatch"><div style="background:var(--danger)"></div><p>Danger<br><code>--danger</code></p></div>
+      </div>
+    </section>
+
+    <section class="type-scale">
+      <h2>Typography</h2>
+      <p style="font-size:1.6rem;font-weight:700">Stat value: 1.6rem / 700</p>
+      <h1>Page title: 1.5rem / 700</h1>
+      <h2>Panel title: 1.05rem / 700</h2>
+      <p>Body: 1rem / 400, line-height 1.5</p>
+      <p class="subtle">Subtle: 0.9rem, muted colour</p>
+    </section>
+
+    <section>
+      <h2>Spacing scale</h2>
+      <div class="spacing">
+        <div><span style="width:var(--space-1)"></span><code>--space-1</code> 0.25rem</div>
+        <div><span style="width:var(--space-2)"></span><code>--space-2</code> 0.5rem</div>
+        <div><span style="width:var(--space-3)"></span><code>--space-3</code> 1rem</div>
+        <div><span style="width:var(--space-4)"></span><code>--space-4</code> 1.5rem</div>
+        <div><span style="width:var(--space-5)"></span><code>--space-5</code> 2rem</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Components</h2>
+      <div class="row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <span class="pill">Pill</span>
+        <span class="trend up">▲ Trend up</span>
+        <span class="trend down">▲ Trend down</span>
+      </div>
+      <div style="margin-top:1.5rem;max-width:320px" class="stat">
+        <p class="stat-label">Stat card</p>
+        <p class="stat-value">Rs 248,500</p>
+        <p class="trend up">▲ 8.2% vs last month</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

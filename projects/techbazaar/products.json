@@ -1,0 +1,14 @@
+[
+  { "id": 1,  "name": "Wireless Earbuds Pro",     "category": "Audio",       "price": 8499,  "rating": 4.6, "icon": "🎧", "stock": 12 },
+  { "id": 2,  "name": "Bluetooth Speaker Mini",   "category": "Audio",       "price": 4299,  "rating": 4.3, "icon": "🔊", "stock": 30 },
+  { "id": 3,  "name": "Studio Headphones",        "category": "Audio",       "price": 15999, "rating": 4.8, "icon": "🎧", "stock": 4 },
+  { "id": 4,  "name": "Mechanical Keyboard",      "category": "Accessories", "price": 11500, "rating": 4.7, "icon": "⌨️", "stock": 9 },
+  { "id": 5,  "name": "Wireless Mouse",           "category": "Accessories", "price": 2999,  "rating": 4.2, "icon": "🖱️", "stock": 40 },
+  { "id": 6,  "name": "USB-C Hub 7-in-1",         "category": "Accessories", "price": 5499,  "rating": 4.4, "icon": "🔌", "stock": 18 },
+  { "id": 7,  "name": "Laptop Stand Aluminium",   "category": "Accessories", "price": 3799,  "rating": 4.5, "icon": "💻", "stock": 22 },
+  { "id": 8,  "name": "Smart Watch Series 5",     "category": "Wearables",   "price": 18999, "rating": 4.4, "icon": "⌚", "stock": 7 },
+  { "id": 9,  "name": "Fitness Band",             "category": "Wearables",   "price": 5999,  "rating": 4.0, "icon": "⌚", "stock": 25 },
+  { "id": 10, "name": "Power Bank 20000mAh",      "category": "Power",       "price": 6499,  "rating": 4.6, "icon": "🔋", "stock": 35 },
+  { "id": 11, "name": "65W GaN Charger",          "category": "Power",       "price": 4999,  "rating": 4.7, "icon": "⚡", "stock": 16 },
+  { "id": 12, "name": "1080p Webcam",             "category": "Accessories", "price": 7299,  "rating": 4.1, "icon": "📷", "stock": 0 }
+]

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinTrack | Personal Finance Dashboard (Design-to-Code Demo)</title>
+  <meta name="description" content="A responsive finance dashboard UI with light and dark themes, an SVG spending chart and a design system, built from a mockup with HTML, CSS and JavaScript.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <!-- Set the theme before first paint to avoid a flash of the wrong theme -->
+  <script>
+    try {
+      const t = localStorage.getItem('fintrack-theme');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <a href="#" class="brand"><span class="brand-mark">F</span> FinTrack</a>
+      <nav aria-label="Dashboard">
+        <ul>
+          <li><a href="#" class="active" aria-current="page">▦ Overview</a></li>
+          <li><a href="#transactions">⇄ Transactions</a></li>
+          <li><a href="#budgets">◔ Budgets</a></li>
+          <li><a href="styleguide.html">◈ Design system</a></li>
+        </ul>
+      </nav>
+      <p class="sidebar-note">Design-to-code demo by Muhammad Hashaam</p>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div>
+          <h1>Good evening, Ali</h1>
+          <p class="subtle">Here's your money this month.</p>
+        </div>
+        <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode">◐</button>
+      </header>
+
+      <section class="stats" aria-label="Summary">
+        <article class="stat">
+          <p class="stat-label">Balance</p>
+          <p class="stat-value" data-count="248500">Rs 0</p>
+          <p class="trend up">▲ 8.2% vs last month</p>
+        </article>
+        <article class="stat">
+          <p class="stat-label">Income</p>
+          <p class="stat-value" data-count="185000">Rs 0</p>
+          <p class="trend up">▲ 3.1%</p>
+        </article>
+        <article class="stat">
+          <p class="stat-label">Spending</p>
+          <p class="stat-value" data-count="96400">Rs 0</p>
+          <p class="trend down">▲ 12.4%</p>
+        </article>
+        <article class="stat">
+          <p class="stat-label">Saved</p>
+          <p class="stat-value" data-count="88600">Rs 0</p>
+          <p class="trend up">48% of income</p>
+        </article>
+      </section>
+
+      <div class="panels">
+        <section class="panel chart-panel" aria-labelledby="chart-title">
+          <div class="panel-head">
+            <h2 id="chart-title">Daily spending</h2>
+            <div class="segmented" role="group" aria-label="Range">
+              <button aria-pressed="true" data-range="7">7 days</button>
+              <button aria-pressed="false" data-range="14">14 days</button>
+            </div>
+          </div>
+          <div class="chart" id="chart" role="img" aria-label="Bar chart of daily spending"></div>
+        </section>
+
+        <section class="panel" id="budgets" aria-labelledby="budget-title">
+          <div class="panel-head"><h2 id="budget-title">Budgets</h2></div>
+          <ul class="budgets" id="budget-list"></ul>
+        </section>
+      </div>
+
+      <section class="panel" id="transactions" aria-labelledby="tx-title">
+        <div class="panel-head">
+          <h2 id="tx-title">Recent transactions</h2>
+          <label class="filter">
+            <span class="visually-hidden">Filter</span>
+            <select id="tx-filter">
+              <option value="all">All</option>
+              <option value="in">Income</option>
+              <option value="out">Spending</option>
+            </select>
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table class="tx-table">
+            <thead>
+              <tr><th scope="col">Description</th><th scope="col">Category</th><th scope="col">Date</th><th scope="col" class="num">Amount</th></tr>
+            </thead>
+            <tbody id="tx-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

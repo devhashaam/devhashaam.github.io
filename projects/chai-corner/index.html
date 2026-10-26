@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: unique title + description for this page -->
+  <title>Chai Corner | Specialty Chai &amp; Café in F-7, Islamabad</title>
+  <meta name="description" content="Chai Corner serves hand-brewed karak, doodh patti and kashmiri chai with fresh bakes in F-7 Markaz, Islamabad. Open daily 8am to midnight.">
+  <link rel="canonical" href="https://devhashaam.github.io/projects/chai-corner/">
+  <meta name="theme-color" content="#7a3e1d">
+
+  <!-- Social sharing previews (Open Graph / Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chai Corner | Specialty Chai in Islamabad">
+  <meta property="og:description" content="Hand-brewed chai and fresh bakes in F-7 Markaz.">
+  <meta property="og:url" content="https://devhashaam.github.io/projects/chai-corner/">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Inline SVG favicon: no extra request -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- defer: download in parallel, run after HTML is parsed -->
+  <script src="script.js" defer></script>
+
+  <!-- Structured data: lets Google show rich results (hours, address) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Chai Corner",
+    "servesCuisine": ["Pakistani", "Tea", "Bakery"],
+    "priceRange": "Rs 150 - Rs 900",
+    "telephone": "+92-51-0000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop 12, F-7 Markaz",
+      "addressLocality": "Islamabad",
+      "addressCountry": "PK"
+    },
+    "openingHours": "Mo-Su 08:00-24:00",
+    "url": "https://devhashaam.github.io/projects/chai-corner/"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Chai Corner home">☕ Chai Corner</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#visit" class="btn btn-small">Visit us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">F-7 Markaz · Islamabad</p>
+          <h1>Chai brewed slowly, the way it should be.</h1>
+          <p class="lead">Hand-brewed karak, doodh patti and pink kashmiri chai, with parathas and bakes made fresh every morning.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn">See the menu</a>
+            <a href="#visit" class="btn btn-ghost">Get directions</a>
+          </div>
+        </div>
+        <!-- Decorative illustration: pure CSS/SVG, so no image download -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="cup">
+            <path class="steam s1" d="M80 40 q-10 -15 0 -30" />
+            <path class="steam s2" d="M100 45 q-10 -15 0 -30" />
+            <path class="steam s3" d="M120 40 q-10 -15 0 -30" />
+            <path class="cup-body" d="M45 70 h110 v50 a55 55 0 0 1 -110 0 z" />
+            <path class="cup-handle" d="M155 85 a22 22 0 0 1 0 44" />
+            <ellipse class="saucer" cx="100" cy="182" rx="80" ry="10" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="container">
+        <h2>Our menu</h2>
+        <p class="section-intro">Everything is made to order. Prices in PKR.</p>
+
+        <div class="tabs" role="tablist" aria-label="Menu categories">
+          <button role="tab" aria-selected="true" aria-controls="tab-chai" id="t-chai">Chai</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-food" id="t-food" tabindex="-1">Food</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-sweet" id="t-sweet" tabindex="-1">Sweet</button>
+        </div>
+
+        <div id="tab-chai" role="tabpanel" aria-labelledby="t-chai" class="menu-grid">
+          <article class="menu-item"><h3>Karak Chai</h3><p>Strong, milky, cardamom-forward.</p><span class="price">Rs 180</span></article>
+          <article class="menu-item"><h3>Doodh Patti</h3><p>Tea leaves boiled straight in milk.</p><span class="price">Rs 200</span></article>
+          <article class="menu-item"><h3>Kashmiri Chai</h3><p>Pink, salted, topped with pistachio.</p><span class="price">Rs 350</span></article>
+          <article class="menu-item"><h3>Masala Chai</h3><p>Ginger, cinnamon, clove and black pepper.</p><span class="price">Rs 220</span></article>
+        </div>
+        <div id="tab-food" role="tabpanel" aria-labelledby="t-food" class="menu-grid" hidden>
+          <article class="menu-item"><h3>Aloo Paratha</h3><p>Spiced potato, white butter, raita.</p><span class="price">Rs 350</span></article>
+          <article class="menu-item"><h3>Chicken Bun Kabab</h3><p>Shami kabab, egg, chutney.</p><span class="price">Rs 450</span></article>
+          <article class="menu-item"><h3>Halwa Puri</h3><p>Weekend special. Chana, halwa, two puris.</p><span class="price">Rs 600</span></article>
+        </div>
+        <div id="tab-sweet" role="tabpanel" aria-labelledby="t-sweet" class="menu-grid" hidden>
+          <article class="menu-item"><h3>Rusk &amp; Biscuits</h3><p>Baked in-house daily.</p><span class="price">Rs 150</span></article>
+          <article class="menu-item"><h3>Gulab Jamun</h3><p>Two pieces, served warm.</p><span class="price">Rs 250</span></article>
+          <article class="menu-item"><h3>Cake Rusk Box</h3><p>A dozen, to take home.</p><span class="price">Rs 900</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container about">
+        <div>
+          <h2>Why Chai Corner?</h2>
+          <p>We started as a roadside dhaba in 2015 and kept the one rule that made us popular: never rush the chai. Every cup is brewed on a slow flame for at least eight minutes.</p>
+        </div>
+        <ul class="features">
+          <li><strong>8 min</strong><span>slow-brewed every cup</span></li>
+          <li><strong>100%</strong><span>fresh full-cream milk</span></li>
+          <li><strong>16 hrs</strong><span>open every day</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <div class="container">
+        <h2>What people say</h2>
+        <div class="reviews">
+          <blockquote><p>"Best karak in Islamabad, and I've tried them all."</p><cite>Ayesha, Google review</cite></blockquote>
+          <blockquote><p>"The halwa puri on Sunday is worth waking up early for."</p><cite>Bilal, Foodpanda</cite></blockquote>
+          <blockquote><p>"Cosy place to study with a cup of kashmiri chai."</p><cite>Sana, Instagram</cite></blockquote>
+        </div>
+        <p class="note">Sample reviews for this demo project.</p>
+      </div>
+    </section>
+
+    <section id="visit" class="section section-alt">
+      <div class="container visit">
+        <div>
+          <h2>Visit us</h2>
+          <address>
+            Shop 12, F-7 Markaz<br>
+            Islamabad, Pakistan
+          </address>
+          <p><strong>Open daily:</strong> 8:00am – 12:00am</p>
+        </div>
+
+        <form class="contact-form" novalidate>
+          <h3>Book a table</h3>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error" id="name-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="03xx xxxxxxx" required>
+            <p class="error" id="phone-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Request booking</button>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Chai Corner · Demo project by <a href="https://devhashaam.github.io/">Muhammad Hashaam</a></p>
+    </div>
+  </footer>
+</body>
+</html>

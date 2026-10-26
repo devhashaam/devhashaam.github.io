@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechBazaar | Gadgets &amp; Accessories Store (jQuery Demo)</title>
+  <meta name="description" content="A product catalogue with live search, filters, sorting and a persistent cart, built with jQuery and AJAX.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="logo">Tech<span>Bazaar</span></a>
+      <button class="cart-btn" id="cart-open" aria-controls="cart" aria-expanded="false">
+        🛒 Cart <span class="badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Filter products">
+      <div class="search">
+        <label for="search" class="visually-hidden">Search products</label>
+        <input type="search" id="search" placeholder="Search earbuds, chargers…" autocomplete="off">
+      </div>
+      <div class="chips" id="categories" role="group" aria-label="Categories"></div>
+      <div class="sort">
+        <label for="sort">Sort</label>
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="rating">Top rated</option>
+        </select>
+      </div>
+    </section>
+
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+
+    <section id="products" class="grid" aria-label="Products">
+      <!-- Skeleton cards shown while the AJAX request runs -->
+      <div class="card skeleton"></div><div class="card skeleton"></div>
+      <div class="card skeleton"></div><div class="card skeleton"></div>
+    </section>
+  </main>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Your cart</h2>
+      <button class="icon-btn" id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-foot">
+      <p class="total">Total <strong id="cart-total">Rs 0</strong></p>
+      <button class="btn" id="checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer container">
+    <p>Demo project by <a href="https://devhashaam.github.io/">Muhammad Hashaam</a>. Built with jQuery 3.7.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
