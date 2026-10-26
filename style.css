@@ -84,6 +84,9 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
 .preview-chai { background: linear-gradient(135deg, #7a3e1d, #f1e4d0); }
 .preview-shop { background: linear-gradient(135deg, #2f5bea, #eef2ff); }
 .preview-fin { background: linear-gradient(135deg, #4f46e5, #0b1120); }
+.preview-sky { background: linear-gradient(135deg, #38bdf8, #1d4ed8); }
+.preview-board { background: linear-gradient(135deg, #0f766e, #ebe9e4); }
+.preview-form { background: linear-gradient(135deg, #7c3aed, #ede9fe); }
 .project-body { padding: 1.5rem; }
 .project h3 { font-size: 1.25rem; }
 .project h3 a { color: var(--text); text-decoration: none; }
