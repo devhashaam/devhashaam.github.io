@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskboard | Kanban Board with Drag and Drop</title>
+  <meta name="description" content="A kanban task board with drag and drop, keyboard controls, priorities, search and saved progress, built in vanilla JavaScript.">
+  <link rel="canonical" href="https://devhashaam.github.io/projects/taskboard/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗂️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <h1>Taskboard</h1>
+    <div class="bar-tools">
+      <label for="filter" class="visually-hidden">Search tasks</label>
+      <input id="filter" type="search" placeholder="Search tasks…">
+      <button class="btn" id="new-task">+ New task</button>
+    </div>
+  </header>
+
+  <main class="board" id="board" aria-label="Task board">
+    <section class="column" data-status="todo" aria-labelledby="h-todo">
+      <h2 id="h-todo">To do <span class="count"></span></h2>
+      <ul class="cards" aria-labelledby="h-todo"></ul>
+    </section>
+    <section class="column" data-status="doing" aria-labelledby="h-doing">
+      <h2 id="h-doing">In progress <span class="count"></span></h2>
+      <ul class="cards" aria-labelledby="h-doing"></ul>
+    </section>
+    <section class="column" data-status="done" aria-labelledby="h-done">
+      <h2 id="h-done">Done <span class="count"></span></h2>
+      <ul class="cards" aria-labelledby="h-done"></ul>
+    </section>
+  </main>
+
+  <p class="hint">Drag cards between columns, or focus a card and use <kbd>←</kbd> <kbd>→</kbd> to move it, <kbd>Enter</kbd> to edit and <kbd>Delete</kbd> to remove it.</p>
+  <p class="visually-hidden" id="announcer" aria-live="assertive"></p>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <form method="dialog" id="task-form">
+      <h2 id="dialog-title">New task</h2>
+      <label>Title <input name="title" required maxlength="80"></label>
+      <label>Notes <textarea name="notes" rows="3" maxlength="300"></textarea></label>
+      <label>Priority
+        <select name="priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" id="cancel">Cancel</button>
+        <button type="submit" class="btn" value="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="foot">Demo project by <a href="https://devhashaam.github.io/">Muhammad Hashaam</a> · Tasks are saved in your browser.</footer>
+</body>
+</html>

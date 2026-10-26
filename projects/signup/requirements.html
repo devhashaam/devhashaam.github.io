@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Wizard: Functional Requirements</title>
+  <meta name="description" content="The functional requirements document written before building the signup wizard: scope, user stories, numbered requirements and acceptance criteria.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <p><a href="index.html">← Back to the signup wizard</a></p>
+    <article class="doc">
+      <h1>Signup Wizard: Functional Requirements</h1>
+      <p><strong>Author:</strong> Muhammad Hashaam · <strong>Version:</strong> 1.0 · <strong>Status:</strong> Implemented</p>
+
+      <h2>1. Purpose</h2>
+      <p>New users abandon long signup forms. This feature splits signup into three short steps with clear, immediate feedback, so more users finish and fewer support tickets come from bad data.</p>
+
+      <h2>2. Scope</h2>
+      <p><strong>In scope:</strong> the client-side form, validation, progress indicator, draft saving and review step.<br>
+      <strong>Out of scope:</strong> the back-end account API, email verification and payment. The form is ready to POST to an endpoint.</p>
+
+      <h2>3. User stories</h2>
+      <ul>
+        <li>As a new user, I want to see how many steps are left, so I know how long signup takes.</li>
+        <li>As a user who made a mistake, I want to be told exactly what to fix and where.</li>
+        <li>As a user who refreshed by accident, I don't want to retype everything.</li>
+        <li>As a screen-reader or keyboard user, I want to complete signup without a mouse.</li>
+      </ul>
+
+      <h2>4. Functional requirements</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Requirement</th><th>Acceptance criteria</th></tr></thead>
+          <tbody>
+            <tr><td>FR-1</td><td>The form is split into Account, Profile, Plan and Review steps.</td><td>Only one step is visible at a time.</td></tr>
+            <tr><td>FR-2</td><td>A progress indicator shows completed, current and upcoming steps.</td><td>The current step has <code>aria-current="step"</code>.</td></tr>
+            <tr><td>FR-3</td><td>Each field is validated on blur and when the user continues.</td><td>Invalid fields get <code>aria-invalid="true"</code> and a message under the field.</td></tr>
+            <tr><td>FR-4</td><td>If a step has errors, an error summary appears at the top.</td><td>The summary gets focus and links to each invalid field.</td></tr>
+            <tr><td>FR-5</td><td>The password must have 8+ characters, a letter and a number, and a strength meter is shown.</td><td>The meter updates as the user types. The password can be shown or hidden.</td></tr>
+            <tr><td>FR-6</td><td>Moving between steps sends focus to the first field of the new step.</td><td>Keyboard users never land at the top of the page.</td></tr>
+            <tr><td>FR-7</td><td>A draft is saved for the browser session.</td><td>After a reload, all fields except the passwords are restored.</td></tr>
+            <tr><td>FR-8</td><td>The review step lists every answer, with links to edit each step.</td><td>User input is shown as text and never parsed as HTML.</td></tr>
+            <tr><td>FR-9</td><td>Submitting sends the data to the account API (stubbed in this demo).</td><td>Nothing is submitted until all steps are valid.</td></tr>
+            <tr><td>FR-10</td><td>A confirmation screen appears on success and the draft is cleared.</td><td>The confirmation gets focus and greets the user by first name.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>5. Non-functional requirements</h2>
+      <ul>
+        <li><strong>Accessibility:</strong> WCAG 2.1 AA, with labels on every input and colour never the only signal.</li>
+        <li><strong>Performance:</strong> no dependencies, under 20 KB in total, Lighthouse 90+ on mobile.</li>
+        <li><strong>Compatibility:</strong> the latest two versions of Chrome, Edge, Firefox and Safari, from 320 px wide up.</li>
+      </ul>
+
+      <h2>6. Test checklist</h2>
+      <ul>
+        <li>Continue with empty fields shows the summary, and its links focus the right fields.</li>
+        <li>Mismatched passwords show "Passwords do not match."</li>
+        <li>Reloading on step 2 restores the email and name but not the password.</li>
+        <li>The whole flow can be completed with the keyboard only (Tab, Space, Enter).</li>
+      </ul>
+    </article>
+  </main>
+</body>
+</html>
