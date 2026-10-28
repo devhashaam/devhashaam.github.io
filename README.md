@@ -7,6 +7,7 @@ Hand-coded with HTML, CSS and JavaScript. No frameworks and no build step.
 
 | Project | What it shows | Live |
 |---|---|---|
+| **ShopSphere**: React store ([own repo](https://github.com/devhashaam/shopsphere)) | React, Redux Toolkit, RTK Query, React Router, 19 Vitest tests, GitHub Actions CI/CD | [/shopsphere/](https://devhashaam.github.io/shopsphere/) |
 | **Chai Corner**: café landing page | Semantic HTML, SEO (meta, Open Graph, JSON-LD structured data), mobile-first CSS Grid, accessible tabs, form validation | [/projects/chai-corner/](https://devhashaam.github.io/projects/chai-corner/) |
 | **TechBazaar**: product catalogue | jQuery, AJAX (`$.getJSON`), event delegation, debounced search, filters/sort, cart in `localStorage`, loading/empty/error states | [/projects/techbazaar/](https://devhashaam.github.io/projects/techbazaar/) |
 | **FinTrack**: finance dashboard | Design-to-code, design tokens with CSS custom properties, light/dark theme, hand-built SVG chart, responsive sidebar | [/projects/fintrack/](https://devhashaam.github.io/projects/fintrack/) |
