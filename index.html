@@ -76,48 +76,86 @@
 
     <section id="projects" class="section">
       <div class="container">
-        <h2 class="section-title">Selected projects</h2>
-        <p class="section-sub">Each one is built to show a different part of front-end work.</p>
+        <div class="projects-head">
+          <div>
+            <h2 class="section-title">Selected projects</h2>
+            <p class="section-sub">Each one is built to show a different part of front-end work. All are live and open source.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filter projects by technology">
+            <button type="button" class="filter" data-filter="all" aria-pressed="true">All <span>8</span></button>
+            <button type="button" class="filter" data-filter="react" aria-pressed="false">React <span>2</span></button>
+            <button type="button" class="filter" data-filter="javascript" aria-pressed="false">JavaScript <span>3</span></button>
+            <button type="button" class="filter" data-filter="jquery" aria-pressed="false">jQuery <span>1</span></button>
+            <button type="button" class="filter" data-filter="design" aria-pressed="false">Design &amp; SEO <span>2</span></button>
+          </div>
+        </div>
+        <p class="visually-hidden" id="filter-status" aria-live="polite"></p>
 
-        <div class="projects">
-          <article class="project reveal">
-            <a href="/shopsphere/" class="project-preview preview-shopsphere" aria-hidden="true" tabindex="-1">
-              <span>🛍️</span>
+        <!-- Featured project -->
+        <article class="featured reveal" data-tags="react">
+          <a href="/shopsphere/" class="shot shot-featured" tabindex="-1" aria-hidden="true">
+            <span class="shot-bar"><i></i><i></i><i></i><span>devhashaam.github.io/shopsphere</span></span>
+            <img src="img/projects/shopsphere.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
+          </a>
+          <div class="featured-body">
+            <p class="eyebrow">★ Featured · React</p>
+            <h3><a href="/shopsphere/">ShopSphere</a></h3>
+            <p class="lede">An online store built with React, Redux Toolkit and RTK Query.</p>
+            <p>It has server-side search, filters, sorting and pagination kept in the URL, product pages with galleries, and a cart with stock limits saved in the browser. A GitHub Actions pipeline runs every test before each deploy.</p>
+            <dl class="stats">
+              <div><dt>Tests</dt><dd>19</dd></div>
+              <div><dt>Products</dt><dd>194</dd></div>
+              <div><dt>Deploy</dt><dd>CI/CD</dd></div>
+            </dl>
+            <ul class="tags"><li>React</li><li>Redux Toolkit</li><li>RTK Query</li><li>React Router</li><li>Vitest</li></ul>
+            <div class="links">
+              <a class="btn btn-small" href="/shopsphere/">Live demo →</a>
+              <a class="btn btn-small btn-outline" href="https://github.com/devhashaam/shopsphere">View code</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid" id="project-grid">
+          <article class="pcard reveal" data-tags="react">
+            <div class="shot shot-placeholder" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>localhost:5173</span></span>
+              <div class="placeholder-art">👕</div>
+            </div>
+            <div class="pcard-body">
+              <p class="eyebrow">React · <span class="status">In development</span></p>
+              <h3>StyleAI</h3>
+              <p>My final year project: a full-stack app that recommends outfits from photos of your own clothes. I'm building the React front end, with protected routes, shared login state and an API layer for a FastAPI back end.</p>
+              <ul class="tags"><li>React</li><li>React Router</li><li>REST API</li><li>JWT</li></ul>
+            </div>
+          </article>
+
+          <article class="pcard reveal" data-tags="javascript">
+            <a href="projects/skies/" class="shot" tabindex="-1" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>/projects/skies</span></span>
+              <img src="img/projects/skies.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
             </a>
-            <div class="project-body">
-              <h3><a href="/shopsphere/">ShopSphere: React + Redux Toolkit store</a></h3>
-              <p>An online store in React with Redux Toolkit for the cart and RTK Query for the API. It has server-side search, filters, sorting and pagination kept in the URL, product pages with galleries, and a cart saved in the browser. It ships with 19 tests and a GitHub Actions pipeline that only deploys when they pass.</p>
-              <ul class="tags"><li>React</li><li>Redux Toolkit</li><li>RTK Query</li><li>React Router</li><li>Vitest</li></ul>
+            <div class="pcard-body">
+              <p class="eyebrow">JavaScript · REST API</p>
+              <h3><a href="projects/skies/">Skies</a></h3>
+              <p>Live weather and a 7-day forecast from the Open-Meteo API, with city autocomplete that cancels stale requests, geolocation and offline handling.</p>
+              <ul class="tags"><li>async/await</li><li>AbortController</li><li>Geolocation</li></ul>
               <div class="links">
-                <a href="/shopsphere/">Live demo →</a>
-                <a href="https://github.com/devhashaam/shopsphere">Code</a>
+                <a href="projects/skies/">Live demo →</a>
+                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/skies">Code</a>
               </div>
             </div>
           </article>
 
-          <article class="project reveal">
-            <a href="projects/chai-corner/" class="project-preview preview-chai" aria-hidden="true" tabindex="-1">
-              <span>☕</span>
+          <article class="pcard reveal" data-tags="jquery">
+            <a href="projects/techbazaar/" class="shot" tabindex="-1" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>/projects/techbazaar</span></span>
+              <img src="img/projects/techbazaar.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
             </a>
-            <div class="project-body">
-              <h3><a href="projects/chai-corner/">Chai Corner: café landing page</a></h3>
-              <p>A responsive, SEO-optimised business site: semantic HTML, schema.org structured data, Open Graph tags, an accessible tabbed menu and a validated booking form, all with no framework and no image downloads.</p>
-              <ul class="tags"><li>HTML5</li><li>CSS Grid</li><li>Vanilla JS</li><li>SEO</li><li>Accessibility</li></ul>
-              <div class="links">
-                <a href="projects/chai-corner/">Live demo →</a>
-                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/chai-corner">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <a href="projects/techbazaar/" class="project-preview preview-shop" aria-hidden="true" tabindex="-1">
-              <span>🛒</span>
-            </a>
-            <div class="project-body">
-              <h3><a href="projects/techbazaar/">TechBazaar: jQuery product catalogue</a></h3>
-              <p>An e-commerce catalogue that loads products over AJAX, with debounced live search, category filters, sorting, stock limits and a slide-out cart saved in localStorage. It includes loading, empty and error states.</p>
-              <ul class="tags"><li>jQuery</li><li>AJAX / JSON</li><li>Event delegation</li><li>localStorage</li></ul>
+            <div class="pcard-body">
+              <p class="eyebrow">jQuery · AJAX</p>
+              <h3><a href="projects/techbazaar/">TechBazaar</a></h3>
+              <p>A product catalogue that loads data over AJAX, with debounced live search, filters, sorting and a slide-out cart saved in the browser.</p>
+              <ul class="tags"><li>jQuery</li><li>Event delegation</li><li>localStorage</li></ul>
               <div class="links">
                 <a href="projects/techbazaar/">Live demo →</a>
                 <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/techbazaar">Code</a>
@@ -125,14 +163,51 @@
             </div>
           </article>
 
-          <article class="project reveal">
-            <a href="projects/fintrack/" class="project-preview preview-fin" aria-hidden="true" tabindex="-1">
-              <span>📊</span>
+          <article class="pcard reveal" data-tags="javascript">
+            <a href="projects/taskboard/" class="shot" tabindex="-1" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>/projects/taskboard</span></span>
+              <img src="img/projects/taskboard.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
             </a>
-            <div class="project-body">
-              <h3><a href="projects/fintrack/">FinTrack: design-to-code dashboard</a></h3>
-              <p>A finance dashboard built from a mockup, with a documented design system (colour, type and spacing tokens), light and dark themes, a hand-built SVG chart, animated budget bars and a responsive sidebar.</p>
-              <ul class="tags"><li>Design system</li><li>CSS variables</li><li>SVG</li><li>Dark mode</li></ul>
+            <div class="pcard-body">
+              <p class="eyebrow">JavaScript · Accessibility</p>
+              <h3><a href="projects/taskboard/">Taskboard</a></h3>
+              <p>A kanban board with drag and drop, plus full keyboard controls, a native &lt;dialog&gt; editor and screen-reader announcements.</p>
+              <ul class="tags"><li>Drag and drop</li><li>Keyboard a11y</li><li>&lt;dialog&gt;</li></ul>
+              <div class="links">
+                <a href="projects/taskboard/">Live demo →</a>
+                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/taskboard">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard reveal" data-tags="javascript">
+            <a href="projects/signup/" class="shot" tabindex="-1" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>/projects/signup</span></span>
+              <img src="img/projects/signup.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
+            </a>
+            <div class="pcard-body">
+              <p class="eyebrow">JavaScript · UX</p>
+              <h3><a href="projects/signup/">Signup Wizard</a></h3>
+              <p>I wrote a requirements document first, then built a 3-step form to match it, with per-step validation, an error summary and a password strength meter.</p>
+              <ul class="tags"><li>Requirements</li><li>Validation</li><li>WCAG</li></ul>
+              <div class="links">
+                <a href="projects/signup/">Live demo →</a>
+                <a href="projects/signup/requirements.html">Requirements</a>
+                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/signup">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard reveal" data-tags="design">
+            <a href="projects/fintrack/" class="shot" tabindex="-1" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>/projects/fintrack</span></span>
+              <img src="img/projects/fintrack.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
+            </a>
+            <div class="pcard-body">
+              <p class="eyebrow">Design to code</p>
+              <h3><a href="projects/fintrack/">FinTrack</a></h3>
+              <p>A finance dashboard built from a mockup and backed by a documented design system, with light and dark themes and a hand-drawn SVG chart.</p>
+              <ul class="tags"><li>Design system</li><li>CSS variables</li><li>SVG</li></ul>
               <div class="links">
                 <a href="projects/fintrack/">Live demo →</a>
                 <a href="projects/fintrack/styleguide.html">Style guide</a>
@@ -141,48 +216,19 @@
             </div>
           </article>
 
-          <article class="project reveal">
-            <a href="projects/skies/" class="project-preview preview-sky" aria-hidden="true" tabindex="-1">
-              <span>🌤️</span>
+          <article class="pcard reveal" data-tags="design">
+            <a href="projects/chai-corner/" class="shot" tabindex="-1" aria-hidden="true">
+              <span class="shot-bar"><i></i><i></i><i></i><span>/projects/chai-corner</span></span>
+              <img src="img/projects/chai-corner.jpg" alt="" width="800" height="500" loading="lazy" decoding="async">
             </a>
-            <div class="project-body">
-              <h3><a href="projects/skies/">Skies: live weather app</a></h3>
-              <p>Real-time weather and a 7-day forecast from the Open-Meteo REST API. It has city autocomplete that cancels stale requests, geolocation, °C/°F switching, 10-minute response caching, and clear offline and error messages.</p>
-              <ul class="tags"><li>REST API</li><li>async/await</li><li>AbortController</li><li>Geolocation</li></ul>
+            <div class="pcard-body">
+              <p class="eyebrow">HTML · SEO</p>
+              <h3><a href="projects/chai-corner/">Chai Corner</a></h3>
+              <p>A mobile-first café website with semantic HTML, structured data for Google, social previews and an accessible tabbed menu, scoring 99 on Lighthouse.</p>
+              <ul class="tags"><li>HTML5</li><li>SEO</li><li>CSS Grid</li></ul>
               <div class="links">
-                <a href="projects/skies/">Live demo →</a>
-                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/skies">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <a href="projects/taskboard/" class="project-preview preview-board" aria-hidden="true" tabindex="-1">
-              <span>🗂️</span>
-            </a>
-            <div class="project-body">
-              <h3><a href="projects/taskboard/">Taskboard: kanban board</a></h3>
-              <p>A task board with drag and drop between columns, plus a full keyboard alternative (arrow keys to move, Enter to edit). It has priorities, live search, a native &lt;dialog&gt; editor, screen-reader announcements and tasks saved in the browser.</p>
-              <ul class="tags"><li>Drag and drop</li><li>Keyboard a11y</li><li>&lt;dialog&gt;</li><li>localStorage</li></ul>
-              <div class="links">
-                <a href="projects/taskboard/">Live demo →</a>
-                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/taskboard">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <a href="projects/signup/" class="project-preview preview-form" aria-hidden="true" tabindex="-1">
-              <span>📝</span>
-            </a>
-            <div class="project-body">
-              <h3><a href="projects/signup/">Signup Wizard: requirements to code</a></h3>
-              <p>I wrote a functional requirements document first (user stories, 10 numbered requirements, acceptance criteria), then built to it: a 3-step form with per-step validation, an error summary, a password strength meter, a saved draft and a review step.</p>
-              <ul class="tags"><li>Requirements doc</li><li>Form UX</li><li>Validation</li><li>WCAG</li></ul>
-              <div class="links">
-                <a href="projects/signup/">Live demo →</a>
-                <a href="projects/signup/requirements.html">Requirements</a>
-                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/signup">Code</a>
+                <a href="projects/chai-corner/">Live demo →</a>
+                <a href="https://github.com/devhashaam/devhashaam.github.io/tree/main/projects/chai-corner">Code</a>
               </div>
             </div>
           </article>
